@@ -26,7 +26,7 @@ console.log(nomeCompleto('Igor', 'Santos'));
 
 // Crie uma função que verifica se um número é par
 function parOuImpar(num) {
-    return num % 2 == 0 ? 'É par' : 'Impar';
+    return num % 2 == 0 ? 'É par' : 'Não é par';
 }
 
 console.log(parOuImpar(22));
