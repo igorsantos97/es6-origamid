@@ -29,7 +29,7 @@ function parOuImpar(num) {
     return num % 2 == 0 ? 'É par' : 'Não é par';
 }
 
-console.log(parOuImpar(22));
+console.log(parOuImpar(23));
 
 
 // Crie uma função que retorne o tipo de
