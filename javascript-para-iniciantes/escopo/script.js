@@ -15,7 +15,7 @@ function somarDois(x) {
 }
 
 function dividirDois(x) {
-    return x + dois;
+    return x / dois;
 }
 console.log(somarDois(4));
 console.log(dividirDois(6));
