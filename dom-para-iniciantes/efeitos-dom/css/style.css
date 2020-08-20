@@ -247,3 +247,44 @@ body {
         opacity: 1;
     }
 }
+
+
+.js .faq-lista dt {
+    cursor: pointer;
+}
+
+.js .faq-lista dt::after {
+    content: '⬎';
+    display: inline-block;
+    height: 10px;
+    width: 10px;
+    font-size: 14px;
+    margin-left: 10px;
+} 
+
+.js .faq-lista dt.active::after {
+    content: '⬏';
+} 
+
+.js .faq-lista dd {
+    display: none;
+    max-height: 0px;
+    animation: animaAccordion .5s forwards;
+}
+
+.js .faq-lista dd.active {
+    display: block;
+}
+
+@keyframes animaAccordion {
+    from {
+        opacity: 0;
+        margin-top: -5px;
+    }
+
+    to {
+        opacity: 1;
+        margin-top: 0px;
+        max-height: 100px;
+    }
+}
