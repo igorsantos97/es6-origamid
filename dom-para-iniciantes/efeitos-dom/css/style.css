@@ -288,3 +288,30 @@ body {
         max-height: 100px;
     }
 }
+
+
+.js .js-scroll {
+    opacity: 0;
+    transform: translateX(-30px);
+    transition: .5s;
+}   
+
+
+.js .js-scroll.active {
+    opacity: 1;
+    transform: translateX(0px);
+}
+
+@keyframes animaScroll {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0px);
+    }
+}
+
+
+
+
