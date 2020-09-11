@@ -27,12 +27,12 @@ const transacoes = [
 let taxaTotal = 0;
 let recebimentoTotal = 0;
 
-transacoes.forEach(({ descricao, valor }) => {
-    // OBS: Se houvesse uma palavra 'Taxa' NO MEIO da string e você só quer filtrar os que estão no começo, use o '.slice(0, 4)'
-    if (descricao.includes('Taxa')) {
-        taxaTotal += Number(valor.replace('R$ ', ''));
-    } else {
-        recebimentoTotal += Number(valor.replace('R$ ', ''));
+transacoes.forEach((item) => {
+    const numeroLimpo = +item.valor.replace('R$ ', '');
+    if (item.descricao.slice(0, 4) === 'Taxa') {
+        taxaTotal += numeroLimpo;
+    } else if (item.descricao.slice(0, 4) === 'Rece') {
+        recebimentoTotal += numeroLimpo;
     }
 });
 
@@ -46,25 +46,31 @@ const arrayTransportes = transportes.split(';');
 
 
 // Substitua todos os span's por a's
-const html = `<ul>
+let html = `<ul>
                   <li><span>Sobre</span></li>
                   <li><span>Produtos</span></li>
                   <li><span>Contato</span></li>
                 </ul>`;
 
-const htmlArray = html.split('span');
-const newHtml = htmlArray.join('a');
+html = html.split('span').join('a'); // Posso ir encadeando métodos e propriedades conforme o tipo de dado RETORNADO
 
-// console.log(newHtml);
+console.log(html);
 
 // Retorne o último caracter da frase
 const frase = 'Melhor do ano!';
-// console.log(frase[frase.length - 1]); // !
+console.log(frase.slice(-1)); // !
 
 // Retorne o total de taxas
 const transacoes2 = ['Taxa do Banco', '   TAXA DO PÃO', '  taxa do mercado', 'depósito Bancário', 'TARIFA especial'];
 let qtdeTaxa = 0;
 
-transacoes2.forEach(item => item.trim().toLocaleLowerCase().includes('taxa') ? qtdeTaxa++ : '');
+transacoes2.forEach((item) => {
+    item = item.toLocaleLowerCase();
+    item = item.trim();
+    item = item.slice(0, 4);
+
+    if (item === 'taxa')
+        qtdeTaxa++
+});
 
 console.log(qtdeTaxa); // 3
