@@ -5,6 +5,7 @@ const max = 2000;
 
 let numAleatorio = Math.floor(Math.random() * (max - min + 1)) + min;
 
+console.log(numAleatorio);
 
 // Retorne o maior número da lista abaixo
 const numeros = '4, 5, 20, 8, 9';
