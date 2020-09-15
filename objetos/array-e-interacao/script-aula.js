@@ -142,7 +142,6 @@ const arrayFrutas = frutas2.filter((item) => {
 
 // console.log(arrayFrutas);
 
-
 const aulas = [
     {
         nome: 'HTML 1',
